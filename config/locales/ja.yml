@@ -1,11 +1,17 @@
 ja:
   time:
     formats:
-      datetime_jp: "%Y年 %m月 %d日 %H時 %M分"
+      datetime_jp: '%Y年 %m月 %d日 %H時 %M分'
+  activerecord:
+    attributes:
+      board:
+        author_name: 名前
+        title: タイトル
+        body: 本文
   views:
     pagination:
-      first: '最初'
-      last: '最後'
-      previous: '前'
-      next: '次'
-      truncate: '...'
+      first: 最初
+      last: 最後
+      previous: 前
+      next: 次
+      truncate: ...

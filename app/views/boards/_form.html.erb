@@ -1,3 +1,13 @@
+<% if flash[:error_messages] %>
+  <div class="alert alert-danger">
+    <ul>
+      <% flash[:error_messages].each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with model: @board do |f| %>
   <div class="mb-3">
     <%= f.label :author_name, '名前' %>
