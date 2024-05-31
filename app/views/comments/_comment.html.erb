@@ -3,5 +3,9 @@
   <div class="p-comment__bottomLine">
     <span><%= comment.name %></span>
     <span><%= comment.created_at.strftime(I18n.t('time.formats.datetime_jp'))%></span>
+    <span><%= link_to '削除', comment, class: 'btn btn-outline-dark', data: {
+                                        turbo_method: :delete,
+                                        turbo_confirm: "削除してOK?"
+                                      } %></span>
   </div>
 </div>

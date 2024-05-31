@@ -1,21 +1,19 @@
 # == Schema Information
 #
-# Table name: comments
+# Table name: board_tag_relations
 #
 #  id         :bigint           not null, primary key
-#  comment    :text(65535)      not null
-#  name       :string(255)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  board_id   :bigint           not null
+#  tag_id     :bigint           not null
 #
 # Foreign Keys
 #
 #  fk_rails_...  (board_id => boards.id)
+#  fk_rails_...  (tag_id => tags.id)
 #
-class Comment < ApplicationRecord
+class BoardTagRelation < ApplicationRecord
   belongs_to :board
-
-  validates :name, presence: true, length: { maximum: 10 }
-  validates :comment, presence: true, length: { maximum: 1000 }
+  belongs_to :tag
 end
