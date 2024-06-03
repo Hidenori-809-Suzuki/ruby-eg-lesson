@@ -9,9 +9,9 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to mypage_path
     else
-      redirect_to :back, flash: {
+      redirect_back fallback_location: new_user_path, flash: {
         user: user,
-        error_messages: user.error.full_messages
+        error_messages: user.errors.full_messages
       }
     end
   end

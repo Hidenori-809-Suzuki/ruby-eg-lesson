@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_02_012513) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_02_085105) do
   create_table "board_tag_relations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "board_id", null: false
     t.bigint "tag_id", null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_02_012513) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "birthday"
     t.index ["name"], name: "index_users_on_name", unique: true
   end
 
